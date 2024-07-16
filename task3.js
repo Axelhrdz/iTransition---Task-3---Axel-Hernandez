@@ -45,6 +45,8 @@ function game (){
         }
 
 
+        const victoryRules = determineVictory(args);
+        console.log('Victory Rules: ', victoryRules);
 
 
 
@@ -119,27 +121,7 @@ function game (){
 
 
 
-        //create random key
-        // const crypto = require('crypto');
-        // const key = crypto.randomBytes(32);
-        // console.log(key.toString('hex'));
-
-        //create hash of a message
-        // const testMessage = 'foo';
-        // const hash = new SHA3(256);
-        // hash.update(testMessage);
-        // hash.digest('hex');
-        // // console.log(hash.digest('hex'));
-
-        // //create HMAC suing key and message
-        // const hmac = crypto.createHmac('sha256', key).update(testMessage).digest('hex');
-        // console.log('HMAC: ', hmac);
-
-        // availableMoves.forEach((move, index) => {
-        //     console.log(`${index} - ${move}`);
-        //     index ++;
-        // });
-        // console.log(availableMoves);
+        
     }
 
     

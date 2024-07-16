@@ -44,7 +44,8 @@ function game() {
     let computerMove = Math.floor(Math.random() * args.length);
 
     // Create random key
-    const key = crypto.randomBytes(32);
+    const byteNumber = 32;
+    const key = crypto.randomBytes(byteNumber);
 
     // Create hash of a message
     const message = args[computerMove];
