@@ -38,7 +38,7 @@ function game() {
     }
 
     const victoryRules = getVictoryRules(args);
-    console.log('Victory Rules:', victoryRules);
+    // console.log('Victory Rules:', victoryRules);
 
     // Computer move
     let computerMove = Math.floor(Math.random() * args.length);
@@ -89,7 +89,7 @@ function game() {
         });
 
         console.log(table.toString());
-        promptUser();
+        promptUser(); // Continue prompting the user after showing help
     }
 
     // Ask user to choose a move
@@ -102,11 +102,15 @@ function game() {
                 availableMoves.forEach((move, index) => {
                     console.log(`${index} - ${move}`);
                 });
-                promptUser();
+                promptUser(); // Reprompt if invalid input
             } else {
                 const userMove = availableMoves[moveIndex];
 
-                if (userMove === 'help') {
+                if (userMove === 'exit') {
+                    console.log('Exiting the game...');
+                    readline.close();
+                    process.exit(0); // Exit the process
+                } else if (userMove === 'help') {
                     showHelpTable();
                 } else {
                     console.log(`Your move: ${userMove}`);
@@ -119,7 +123,7 @@ function game() {
                     } else {
                         console.log('You lose!');
                     }
-                    readline.close();
+                    readline.close(); // Close readline after a valid move
                 }
             }
         });
